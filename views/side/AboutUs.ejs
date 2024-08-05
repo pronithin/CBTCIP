@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes gradientBackground {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        @keyframes colorChange {
+            0% {
+                color: #FFC107;
+            }
+            25% {
+                color: #FF5733;
+            }
+            50% {
+                color: #33FF57;
+            }
+            75% {
+                color: #3357FF;
+            }
+            100% {
+                color: #FFC107;
+            }
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(270deg, #161616, #20232a, #282c34, #30363d);
+            background-size: 800% 800%;
+            animation: gradientBackground 15s ease infinite;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 50px 20px;
+            background-color: rgba(0, 0, 0, 0.9);
+            border-radius: 30px;
+            box-shadow: 1px 1px 25px -2px honeydew;
+            animation: fadeInUp 1s ease;
+        }
+
+        h1 {
+            text-align: center;
+            color: #FFC107;
+            margin-bottom: 50px;
+            font-size: 42px;
+            animation: colorChange 10s infinite;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            padding: 30px;
+            background-color: #1C1C1C;
+            border-radius: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1), 1px 1px 25px -2px honeydew;
+            background-color: #252525;
+        } 
+
+        .decor {
+            font-weight: 600;
+            font-size: 25px;
+            color: #00FF00;
+            animation: colorChange 10s infinite;
+        }
+
+        p {
+            font-size: 22px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: #BBB;
+        }
+
+        h2 {
+            font-size: 35px;
+            font-weight: 500;
+            color: #7B68FA;
+        }
+
+        .goals ul {
+            padding: 0;
+            font-size: 22px;
+            margin-left: 20px;
+            line-height: 1.6;
+        }
+
+        .goals span {
+            color: #FF6347;
+            font-size: 24px;
+        }
+
+        .goals ul li {
+            color: #AAA;
+        }
+
+        a {
+            color: #FFF;
+            font-size: 25px;
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: #d13639;
+            border-radius: 50px;
+            display: inline-block;
+            transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #b02a2d;
+            transform: translateY(-3px);
+            color: #FF5733;
+        }
+
+        .branches ul {
+            padding: 0;
+            font-size: 22px;
+            margin-left: 20px;
+            line-height: 1.6;
+        }
+
+        .branches ul li {
+            color: #AAA;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+  <div class="container">
+        <h1>About Us</h1>
+            <div class="section">
+                <p>At Nithin  Events, we are dedicated to creating unforgettable experiences. With years of experience in the industry, our team of Nithin  Eventsfessionals is committed to bringing your vision to life. From corporate events to weddings and everything in between, we strive to deliver exceptional service and attention to detail.</p>
+                <p>Our goal is to make every event a seamless and extraordinary affair, leaving a lasting impression on you and your guests. Get ready to embark on a journey of unforgettable moments with Nithin  Events.</p>
+                <p class="decor">Join with us to make your events memorable</p>
+            </div> 
+
+            <div class="section">
+                <h2>Our Sponsors and Supporters</h2>
+                <p>At Nithin  Events, we are incredibly grateful for the support of our amazing sponsors. These partnerships allow us to create exceptional events that leave a lasting impact on our attendees. With their generous contributions, our sponsors help us bring unique experiences, top-notch resources, and exciting opportunities to our events.</p>
+                <p>We value their commitment to our vision and are proud to collaborate with them to deliver unforgettable moments. Together, we strive to make every event a memorable and extraordinary affair.</p>
+            </div>
+
+            <div class="section goals">
+                <h2>Our Goals</h2>
+                <ul>
+                    <li><span>Satisfaction:</span> We ensure that every client is satisfied with the services provided by nithinevents. This includes meeting their requirements, providing exceptional service, and exceeding their expectations whenever possible.</li>
+                    <li><span>Quality Events:</span> We strive to organize high-quality events that reflect professionalism, creativity, and attention to detail. Whether it's a corporate conference, a wedding, or a community gathering, each event should leave a lasting impression on attendees.</li>
+                    <li><span>Cost-Effectiveness:</span> We strive to deliver exceptional value to clients by offering cost-effective solutions without compromising on quality. This involves efficient budget management, negotiating favorable deals with vendors, and optimizing resource utilization.</li>
+                </ul>
+            </div> 
+            
+            <div class="section branches">
+                <h2>Our Branches</h2>
+                <p>At Nithin  Events, we have branches located in various cities, allowing us to serve clients across the country. Our dedicated teams in each branch work tirelessly to bring your events to life, ensuring seamless execution and unforgettable experiences.</p>
+                <p>From our headquarters in Hyderabad to our branches, we are committed to delivering top-notch event management services wherever you are. No matter the location, our goal remains the same - to create exceptional events that leave a lasting impression. We have branches at:</p>
+                <ul>
+                    <li>Chennai</li>
+                    <li>Hyderabad</li>
+                    <li>Bangalore</li>
+                    <li>Vijayawada</li>
+                    <li>Vijag</li>
+                    <li>Warangal</li>
+                </ul>
+            </div>   
+            <div class="section">
+                <h2>Career With Us</h2>
+                <p>Join Our Passionate Team. At Nithin  Events, we believe in fostering a vibrant and collaborative work environment where creativity thrives. We are always on the lookout for talented individuals who share our passion for event management.</p>
+                <p>Whether you're a seasoned professional or just starting your career, we offer exciting opportunities to grow and excel. As part of our team, you'll have the chance to work on diverse projects, learn from industry experts, and contribute to the creation of extraordinary events.</p>
+                <p class="decor">To Join us in shaping unforgettable experiences and take your career to new heights with Nithin  Events click below<p>
+                <a href="/register" id="reg">Register Now</a>    
+            </div>
+ </div>
+</body>
+</html>

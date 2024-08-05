@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You</title>
+    <!-- Include Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to bottom, #222, #333);
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff; /* Text color */
+            flex-direction: column;
+            transition: background 0.5s ease; /* Transition for background color change */
+        }
+
+        body:hover {
+            background: linear-gradient(to bottom, #ff7f50, #ff6347, #ffd700); /* Multicolor gradient on hover */
+        }
+
+        .circle-container {
+            position: relative;
+            width: 300px; /* Increased size of the circle */
+            height: 300px; /* Increased size of the circle */
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            animation: expandCircle 2s ease forwards; /* Animation to expand the circle */
+            transition: transform 0.5s ease, background-color 0.5s ease; /* Transition for background color change */
+        }
+
+        .circle-container:hover {
+            background-color: rgba(255, 215, 0, 0.3); /* Change background color on hover */
+            transform: scale(1.1); /* Slightly increase size on hover */
+        }
+
+        @keyframes expandCircle {
+            0% {
+                transform: scale(0);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .message {
+            text-align: center;
+            margin-top: 20px;
+            opacity: 0; /* Initially hidden */
+            animation: fadeIn 1s ease forwards; /* Animation to fade in the content */
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .glow {
+            animation: glow 2s infinite alternate; /* Glowing animation for "Thank You" */
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #00cc00; /* Initial shadow */
+            }
+            to {
+                text-shadow: 0 0 20px #00cc00, 0 0 30px #00cc00, 0 0 40px #00cc00; /* Glowing effect */
+            }
+        }
+
+        .icon {
+            font-size: 48px;
+            color: #00cc00; /* Green color for the checkmark */
+            margin-bottom: 10px;
+            transition: transform 0.5s ease; /* Transition for transform */
+        }
+
+        .icon:hover {
+            transform: rotate(20deg); /* Rotate icon on hover */
+        }
+
+        .message p {
+            transition: color 0.5s ease; /* Transition for text color change */
+        }
+
+        .message p:hover {
+            color: #ffd700; /* Change text color on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="circle-container">
+        <div class="message">
+            <h1 class="glow">Thank You for Registering</h1>
+            <!-- Checkmark icon -->
+            <div class="icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="message">
+        <p>Your registration has been received successfully.</p>
+    </div>
+</body>
+</html>

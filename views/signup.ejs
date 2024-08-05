@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Login Form</title>
+	<link rel="stylesheet" href="login.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+</head>
+
+<body>
+	<div class="container">
+        <p ><span>N</span>ithin <span>E</span>vents</p>
+		<div class="slider"></div>
+		<div class="btn">
+			<button class="login">Login</button>
+			<button class="signup">Signup</button>
+		</div>
+
+		<div class="form-section">
+			<form action="/login" method="POST" class="login-box">
+				<input type="email" name="email" class="ele" placeholder="Email" required="">
+				<input type="password" name="password" class="ele" placeholder="Password" required="">
+				<button class="login-clkbtn">Login</button>
+			</form>			
+			<form action="/signup" method="POST" class="signup-box" id="signupForm">
+
+				<input type="text" class="ele" name="username" id="username" placeholder="User name" required >
+				<input type="email" class="ele" name="email" id="email" placeholder="Email@gmail.com" required pattern="[a-zA-Z0-9._%+-]+@gmail\.com$" title="Please enter a valid Gmail address">
+
+
+				<input type="text" class="ele" name="phoneNumber" id="phoneNumber" placeholder="Phone Number" required>
+				<input type="password" name="password" id="password" class="ele"placeholder="Type Password" required>
+				<button type="submit" value="submit" class="signup-clkbtn" onclick="validateEmail()">Sign Up</button>
+              
+            </form>
+		</div>
+	</div>
+	<script src="login.js"></script>
+	<script>
+
+	</script>
+</body>
+</html>

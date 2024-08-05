@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nithin  Events - Reception Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <style>
+        body {
+            font-family: "Montserrat", sans-serif;
+            background: linear-gradient(to right, #ff7f50, #ff6347, #ffd700);
+            margin: 0;
+            padding: 40px 0;
+            transition: background 0.5s ease;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            box-shadow: 1px 1px 25px -2px honeydew;
+            transition: transform 0.3s ease;
+        }
+        .header {
+            text-align: center;
+            padding: 20px;
+            background-color: rgb(88, 188, 190);
+            color: #fff;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        .header i {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+        .content {
+            margin-top: 20px;
+            padding: 20px;
+            color: #333;
+        }
+        h2 {
+            color: #333;
+            margin-top: 0;
+        }
+        p {
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        .button:hover {
+            background-color: #ff4500;
+            transform: translateY(-4px);
+        }
+        .button.green {
+            background-color: #45a049;
+        }
+        .services {
+            margin-top: 20px;
+        }
+        .service-item {
+            display: flex;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+        .service-icon {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+        .service-details {
+            flex: 1;
+        }
+        .service-details h3 {
+            margin-top: 0;
+        }
+        .service-details p {
+            margin-bottom: 0;
+            line-height: 1.6;
+        }
+        footer {
+            background: #BBB;
+            color: black;
+            padding: 10px 0;
+            font-family: Arial, sans-serif;
+            max-width: 1400px;
+            border-radius: 10px;
+            margin: 30px auto;
+        }
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .footer-container h1 {
+            font-size: 3rem;
+            margin-top: 15px;
+        }
+        .footer-container span {
+            font-size: 3.5rem;
+            color: rgb(118, 118, 252);
+        }
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .col {
+            flex-basis: calc(30% - 20px);
+            margin-bottom: 20px;
+        }
+        .col h3 {
+            color: rgb(44, 24, 7);
+            border-bottom: 2px solid black;
+            padding-bottom: 10px;
+            font-size: 30px;
+        }
+        .col p {
+            margin: 0;
+        }
+        .container hr {
+            margin: 10px 0;
+            border: 1px solid black;
+        }
+        .social-icons {
+            text-align: center;
+        }
+        .social-icons a {
+            display: inline-block;
+            background-color: #555;
+            color: #fff;
+            padding: 10px;
+            border-radius: 50%;
+            margin: 0 5px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 18px;
+            transition: background-color 0.4s;
+        }
+        .social-icons a:hover {
+            background-color: rgb(118, 118, 252);
+        }
+        #footUseful a {
+            color: #222;
+            text-decoration: none;
+            font-size: 20px;
+            line-height: 1.6;
+        }
+        #footUseful a:hover {
+            color: rgb(118, 118, 252);
+        }
+        #footContact p {
+            color: #222;
+            font-size: 20px;
+            line-height: 1.8;
+        }
+        .footer-end {
+            padding: 20px;
+            background-color: darkcyan;
+            color: #fff;
+            text-align: center;
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+        footer ul li {
+            font-size: 20px;
+            color: #222;
+            line-height: 1.8;
+        }
+        footer ul {
+            list-style-type: none;
+            margin-left: 4px;
+        }
+        footer ul li i {
+            margin-right: 8px;
+        }
+        .slideshow {
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        .image-grid {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            overflow: hidden;
+        }
+        .image-grid img {
+            width: 30%;
+            height: auto;
+            object-fit: cover;
+        }
+        .container:hover {
+            transform: translateY(-5px);
+        }
+        .container:hover h2, .container:hover p, .container:hover h3 {
+            color: #ff4500;
+        }
+        .button:hover {
+            background-color: #ff6347;
+            transform: translateY(-4px);
+        }
+        .header:hover {
+            background-color: #ff7f50;
+        }
+        body:hover {
+            background: linear-gradient(to right, #7FFFD4, #FFD700, #FF69B4);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <i class="fas fa-glass-cheers"></i>
+            <h1>Welcome to Nithin  Events Reception Event Services</h1>
+        </div>
+        <div class="content">
+            <h2>Choose Nithin  Events</h2>
+            <p>Welcome to Nithin  Events, your premier destination for creating unforgettable receptions! At Nithin  Events, we specialize in organizing receptions that leave a lasting impression on your guests.</p>
+            <p>Whether you're planning a wedding reception, a corporate cocktail party, or a special milestone celebration, we're here to help you create an elegant and memorable event.</p>
+            <p>Our team of experienced event organizers understands the importance of every detail when it comes to planning a successful reception. From selecting the perfect venue and designing stunning decor to coordinating catering and entertainment, we take care of everything to ensure your reception is flawless.</p>
+            <p>At Nithin  Events, we believe that every reception should be a reflection of your unique style and vision. That's why we work closely with you to customize every aspect of your event, from the menu and music to the overall ambiance and atmosphere.</p>
+            <p>Join us at Nithin  Events and let us help you turn your reception into an unforgettable celebration. Explore our services, browse through our past successes, and let us bring your vision to life. Together, we'll create memories that will be cherished for a lifetime.</p>
+            <h2>Our Services</h2>
+            <div class="services">
+                <div class="service-item">
+                    <i class="fas fa-map-marker-alt service-icon"></i>
+                    <div class="service-details">
+                        <h3>Venue Selection</h3>
+                        <p>Discover exquisite venues perfectly suited to your reception needs, whether it's a glamorous ballroom, a scenic outdoor space, or an intimate banquet hall, with our expert venue selection services tailored to your preferences.</p>
+                    </div>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-paint-brush service-icon"></i>
+                    <div class="service-details">
+                        <h3>Decoration</h3>
+                        <p>Elevate your reception with stunning decor that reflects your style and sets the perfect ambiance for your event, ensuring every detail is meticulously curated to create a memorable experience for you and your guests.</p>
+                    </div>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-utensils service-icon"></i>
+                    <div class="service-details">
+                        <h3>Catering</h3>
+                        <p>Indulge your guests with a delectable culinary experience through our exceptional catering services, offering a diverse menu selection and impeccable presentation to satisfy every palate and enhance the overall enjoyment of your event.</p>
+                    </div>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-music service-icon"></i>
+                    <div class="service-details">
+                        <h3>Entertainment</h3>
+                        <p>Create an unforgettable atmosphere with our top-notch entertainment options, including live bands, DJs, and performers, ensuring your reception is filled with joy, excitement, and captivating moments that will leave a lasting impression.</p>
+                    </div>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-photo-video service-icon"></i>
+                    <div class="service-details">
+                        <h3>Photography & Videography</h3>
+                        <p>Preserve every precious moment of your reception with our professional photography and videography services, capturing candid shots and cinematic highlights that you can cherish and relive for years to come.</p>
+                    </div>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-gift service-icon"></i>
+                    <div class="service-details">
+                        <h3>Custom Favors & Gifts</h3>
+                        <p>Delight your guests with personalized favors and gifts that add a special touch to your reception, leaving them with thoughtful mementos that reflect your appreciation and make your event even more memorable.</p>
+                    </div>
+                </div>
+            </div>
+            <h2>Get Started Today!</h2>
+            <p>Ready to plan your dream reception? Contact us today to schedule a consultation and let our expert team bring your vision to life!</p>
+            <a href="contact.html" class="button">Contact Us</a>
+            <a href="services.html" class="button green">Explore Our Services</a>
+        </div>
+        <div class="slideshow">
+            <!-- Images to be displayed -->
+            <div class="image-grid">
+                <img src="/rec/recimg1.png" alt="Image 1">
+                <img src="/rec/recimg2.png" alt="Image 2">
+                <img src="/rec/recimg3.png" alt="Image 3">
+            </div>
+            <div class="image-grid">
+                <img src="/rec/recimg4.png" alt="Image 2">
+                <img src="/rec/recimg5.png" alt="Image 3">
+                <img src="/rec/recimg6.png" alt="Image 4">
+            </div>
+            <div class="image-grid">
+                <img src="/rec/recimg7.png" alt="Image 7">
+                <img src="/rec/recimg8.png" alt="Image 8">
+                <img src="/rec/recimg9.png" alt="Image 9">
+            </div>
+        </div>
+        
+    </div>
+    <footer>
+        <div class="footer-container">
+            <h1>Nithin <span>Events</span></h1>
+            <div class="row">
+                <div class="col">
+                    <h3>Contact Information</h3>
+                    <hr>
+                    <div id="footContact">
+                        <p><i class="fas fa-envelope"></i> <a href="mailto:info@nithinevents.com">info@nithinevents.com</a></p>
+                        <p><i class="fas fa-phone"></i> +1 (123) 456-7890</p>
+                        <p><i class="fas fa-map-marker-alt"></i> 1234 Event St., Celebration City, Partyland</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <h3>Useful Links</h3>
+                    <hr>
+                    <div id="footUseful">
+                        <ul>
+                            <li><i class="fas fa-angle-right"></i> <a href="index.html">Home</a></li>
+                            <li><i class="fas fa-angle-right"></i> <a href="about.html">About Us</a></li>
+                            <li><i class="fas fa-angle-right"></i> <a href="services.html">Services</a></li>
+                            <li><i class="fas fa-angle-right"></i> <a href="gallery.html">Gallery</a></li>
+                            <li><i class="fas fa-angle-right"></i> <a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col">
+                    <h3>Follow Us</h3>
+                    <hr>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-end">
+                <p>&copy; 2023 Nithin  Events. All rights reserved. | Website by Your Name</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

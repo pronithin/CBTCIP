@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Update Employee</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(20, 10, 0, 0.3);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    select, input[type="text"], input[type="email"], input[type="password"], input[type="number"], input[type="tel"], input[type="date"] {
+      width: calc(100% - 20px);
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+
+    select {
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      padding: 10px 20px;
+      background-color: #fff;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 10 5' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 0L0 5h10L5 0zm0 5L0 0h10l-5 5z' fill='%23007bff'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+      background-size: 10px 5px;
+    }
+
+    button[type="submit"] {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 10px 40px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <h1>Update Employee</h1>
+  <form action="/empempupdate/<%= currentUser._id %>" method="post">
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" name="firstName" value="<%= currentUser.firstName %>" >
+    
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" name="lastName" value="<%= currentUser.lastName %>" >
+    
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" value="<%= currentUser.email %>" >
+    
+    <label for="phoneNumber">Phone Number:</label>
+    <input type="tel" id="phoneNumber" name="phoneNumber" value="<%= currentUser.phoneNumber %>" >
+    
+    <label for="role">Role:</label>
+    <select id="role" name="role">
+      <% if (Employeetoupdate.role == 'admin') { %>
+        <option value="Event sales" <%= Employeetoupdate.role === 'Event sales' ? 'selected' : '' %>>Event sales</option>
+        <option value="Event manager" <%= Employeetoupdate.role === 'Event manager' ? 'selected' : '' %>>Event Manager</option>
+        <option value="Event coordinator" <%= Employeetoupdate.role === 'Event coordinator' ? 'selected' : '' %>>Event Coordinator</option>
+        <option value="Employee" <%= Employeetoupdate.role === 'Employee' ? 'selected' : '' %>>Employee</option>
+      <% } else if(Employeetoupdate.role == 'Event manager'){ %>
+        <option value="Event sales" <%= Employeetoupdate.role === 'Event sales' ? 'selected' : '' %>>Event sales</option>
+        <option value="Event coordinator" <%= Employeetoupdate.role === 'Event coordinator' ? 'selected' : '' %>>Event Coordinator</option>
+        <option value="Employee" <%= Employeetoupdate.role === 'Employee' ? 'selected' : '' %>>Employee</option>
+      <% } else if(Employeetoupdate.role == 'Event coordinator'){ %>
+        <option value="Event sales" <%= Employeetoupdate.role === 'Event sales' ? 'selected' : '' %>>Event sales</option>
+        <option value="Employee" <%= Employeetoupdate.role === 'Employee' ? 'selected' : '' %>>Employee</option>
+      <% } %>
+    </select>
+    
+    <label for="previousWorkPlace">Previous Workplace:</label>
+    <input type="text" id="previousWorkPlace" name="previousWorkPlace" value="<%= currentUser.previousWorkPlace %>">
+    
+    <label for="experience">Experience (in years):</label>
+    <input type="number" id="experience" name="experience" value="<%= currentUser.experience %>">
+    
+    <label for="education">Education:</label>
+    <input type="text" id="education" name="education" value="<%= currentUser.education %>">
+    
+    <label for="skills">Skills:</label>
+    <input type="text" id="skills" name="skills" value="<%= currentUser.skills %>">
+    
+    <label for="availability">Availability:</label>
+    <input type="date" id="availability" name="availability" value="<%= currentUser.availability instanceof Date ? currentUser.availability.toISOString().slice(0,10) : '' %>" >
+     
+    <button type="submit">Update</button>
+  </form>
+</body>
+</html>

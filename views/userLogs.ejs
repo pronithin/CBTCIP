@@ -1,0 +1,46 @@
+<!-- views/logs.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logs</title>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid #dddddd;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+  <h1>Logs</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Timestamp</th>
+        <th>Action</th>
+        <th>User</th>
+        <th>Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% logs.forEach(log => { %>
+        <tr>
+          <td><%= log.timestamp %></td>
+          <td><%= log.action %></td>
+          <td><%= log.user %></td>
+          <td><%= JSON.stringify(log.details) %></td> <!-- Display details as JSON string -->
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+</body>
+</html>

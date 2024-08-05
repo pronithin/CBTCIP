@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nithin  Events - Cultural Events Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"  />
+    <style>
+        body {
+            font-family: "montserrat", sans-serif;
+            background-color: #222;
+            margin: 0;
+            padding: 40px 0;            
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px 20px;           
+            box-shadow: 0 2px 4px honeydew;
+            border-radius: 8px;
+            box-shadow: 1px 1px 25px -2px  honeydew;
+        }
+        .header {
+            text-align: center;
+            padding: 20px;
+            background-color: rgb(88, 188, 190);
+            color: #fff;
+            margin-bottom: 20px;
+            border-radius: 8px;
+           
+        }
+        .header i {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+        .content {
+            margin-top: 20px;
+            padding: 20px;
+            color: #fff;
+        }
+        h2 {
+            color: #fff;
+            margin-top: 0;
+        }
+        p {
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+         .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            cursor: pointer;
+            margin-right: 10px;
+            transition: all 0.1s ease ;
+        } 
+        .button:last-child {
+            margin-right: 0;
+        }
+        .button:hover {
+            
+            transform: translatey(-4px);
+            
+           
+        }
+        .button.green {
+            background-color: #45a049;
+        }
+      
+        .services {
+            margin-top: 20px;
+        }
+        .service-item {
+            display: flex;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+
+        .service-icon {
+            font-size: 24px;
+            margin-right: 10px;
+            margin-bottom: 40px;
+        }
+
+        .service-details {
+            flex: 1;
+        }
+
+        .service-details h3 {
+            margin-top: 0;
+        }
+
+        .service-details p {
+            margin-bottom: 0;
+            line-height: 1.6;
+        }
+
+        footer {
+            background: #BBB;
+            color: black;
+            padding: 0 0 10px 0;
+            font-family: Arial, sans-serif;
+            max-width: 1400px;
+            border-radius: 10px;
+            margin: 30px auto;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-container h1{
+            font-size: 3rem;
+            margin-top: 15px;
+        }
+        .footer-container span{
+            font-size: 3.5rem;
+            color: rgb(118, 118, 252);
+        }
+
+         .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .col {
+            flex-basis: calc(30% - 20px);
+            margin-bottom: 0px;
+        }
+
+        .col h3 {
+            color: rgb(44, 24, 7);
+            border-bottom: 2px solid black;
+            padding-bottom: 10px;
+            font-size: 30px;
+        }
+
+        .col p {
+            margin: 0;
+        } 
+
+       .container hr { 
+            margin: 10px 0;
+            border: 1px solid black;
+        }
+        
+
+        .social-icons {
+            text-align: center;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            background-color: #555;
+            color: #fff;
+            padding: 10px;
+            border-radius: 50%;
+            margin: 0 5px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 18px;
+            transition: background-color 0.4s;
+        }
+
+        .social-icons a:hover {
+            background-color: rgb(118, 118, 252);
+        }
+
+        #footUseful a{
+         color: #222;
+         text-decoration: none;
+         font-size: 20px;
+         line-height: 1.6;
+    }
+
+    #footUseful a:hover{
+        color: rgb(118, 118, 252);
+    }
+    #footContact p{
+        color: #222;
+        font-size: 20px;
+         line-height: 1.8;
+
+    }
+    .footer-end {
+            padding: 20px;
+            background-color: darkcyan;
+            color: #fff;
+            text-align: center;
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+
+     
+footer ul li{
+    font-size: 20px;
+    color: #222;
+    line-height: 1.8;
+}
+
+footer ul {
+    list-style-type: none;
+    margin-left: 4px;
+  
+}
+
+footer ul li i{
+    margin-right: 8px;
+}   
+
+        .slideshow {
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .image-grid {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            overflow: hidden;
+        }
+
+        .image-grid img {
+            width: 30%; /* Adjusted width for three images side by side */
+            height: auto;
+            object-fit: cover;
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <i class="fas fa-drum"></i>
+<!--         
+        <i class="fas fa-music" style="font-size: 3rem;"></i>
+        <i class="fas fa-music" style="font-size: 3rem;"></i>
+        <i class="fas fa-music" style="font-size: 3rem;"></i> Wedding ring icon -->
+        <h1>Welcome to Nithin  Events Cultural Event Servics</h1>
+    </div>
+   
+        <div class="content">
+            <h2>Choose Nithin  Events</h2>
+            <p>Welcome to Nithin  Events, your premier destination for cultural event organization! At Nithin  Events, we specialize in curating unforgettable cultural experiences tailored to your unique preferences and needs. Whether you're planning a festival, concert, exhibition, or any other cultural gathering, we're here to bring your vision to life.</p>
+
+                <p></p>Our team of experienced event organizers is dedicated to ensuring every detail of your event is meticulously planned and executed with precision. From venue selection and logistics management to artist booking and promotion, we handle it all so you can focus on enjoying the celebration.</p>
+                
+                <p>At Nithin  Events, we pride ourselves on our commitment to diversity and inclusivity. We celebrate cultures from around the world, showcasing a diverse range of traditions, art forms, and performances. Whether you're interested in exploring traditional music, dance, cuisine, or visual arts, we have something for everyone.</p>
+                
+                <p></p>Join us at Nithin  Events and immerse yourself in a world of culture, creativity, and community. Stay updated on upcoming events, browse through our past successes, and let us help you create memories that will last a lifetime. Let's make your cultural event a truly unforgettable experience together.</p>
+        <h2>Our Services</h2>
+        <div class="services">
+            <div class="service-item">
+                <i class="fas fa-map-marker-alt service-icon"></i>
+                <div class="service-details">
+                    <h3>Venue Selection</h3>
+                    <p>Discover the perfect setting for your cultural event with our expert venue selection services, tailored to match your theme and audience.</p>
+                </div>
+            </div>
+            <div class="service-item">
+                <i class="fas fa-paint-brush service-icon"></i>
+                <div class="service-details">
+                    <h3>Decoration</h3>
+                    <p>Transform any space into a vibrant cultural haven with our exquisite decoration services, adding flair and ambiance to every corner.</p>
+                </div>
+            </div>
+            <div class="service-item">
+                <i class="fas fa-utensils service-icon"></i>
+                <div class="service-details"><br>
+                    <h3>Catering</h3>
+                    <p>Treat your guests to a culinary journey around the world with our diverse catering options, featuring authentic flavors and exceptional service.</p>
+                </div>
+            </div>
+            <div class="service-item">
+                <i class="fas fa-music service-icon"></i>
+                <div class="service-details"><br>
+                    <h3>Entertainment</h3>
+                    <p>Elevate your event with captivating performances and interactive experiences curated by our entertainment specialists, ensuring an unforgettable cultural celebration..</p>
+                </div>
+            </div>
+        </div>
+        <div >
+            <div class="slideshow">
+                <!-- Images to be displayed -->
+                <div class="image-grid">
+                    <img src="/cultural/culimg1.jpg" alt="Image 1">
+                    <img src="/cultural/culimg2.png" alt="Image 2">
+                    <img src="/cultural/culimg3.png" alt="Image 3">
+                </div>
+                <div class="image-grid">
+                    <img src="/cultural/culimg4.png" alt="Image 4">
+                    <img src="/cultural/culimg5.png" alt="Image 5">
+                    <img src="/cultural/culimg6.png" alt="Image 6">
+                </div>
+                <div class="image-grid">
+                    <img src="/cultural/culimg7.png" alt="Image 7">
+                    <img src="/cultural/culimg8.png" alt="Image 8">
+                    <img src="/cultural/culimg9.png" alt="Image 9">
+                </div>
+            </div>
+          
+        </div>
+        <h2>Our Packages</h2>
+        <div class="packages">
+            <div class="package">
+                <h3>Standard Package</h3>
+                <p>Our Standard Package includes:</p>
+                <ul>
+                    <li>Venue booking in a location of your choice</li>
+                    <li>Basic decoration to enhance the ambiance</li>
+                    <li>Delicious catering for all your guests</li>
+                    <li>Professional event coordination</li>
+                </ul>
+                <p>Price: $599</p>
+                <a href="/booking" class="button green" id="bookNowStandardButton">Book Standard Package</a>
+            </div>
+            <div class="package">
+                <h3>Premium Package</h3>
+                <p>Our Premium Package includes all the features of the Standard Package, plus:</p>
+                <ul>
+                    <li>Personalized decorations tailored to your theme</li>
+                    <li>Gourmet catering with a variety of menu options</li>
+                    <li>Live entertainment to dazzle your guests</li>
+                    <li>Luxury transportation for VIP guests</li>
+                </ul>
+                <p>Price: $899</p>
+                <a href="/booking" class="button green" id="bookNowPremiumButton">Book Premium Package</a>
+                <br>
+                <br>
+                <br>
+                <br>
+            </div>
+        </div>
+
+        
+        <footer>
+
+            <div class="footer-container">
+        
+                   <div class="row">
+                    <div class="col">                      
+                    <h1><span>N</span>ithin <span>E</span>vents</h1>
+                    <ul>
+                        <li> <i class="fa-solid fa-location-dot"></i>Hyderabad</li>
+                        <li> <i class="fa-solid fa-location-dot"></i>Chennai</li>
+                        <li> <i class="fa-solid fa-location-dot"></i>Bangalore</li>
+                        <li> <i class="fa-solid fa-location-dot"></i>Vizag</li>
+                        <li> <i class="fa-solid fa-location-dot"></i>Vijayawada</li>
+                        <li> <i class="fa-solid fa-location-dot"></i>Warangal</li>   
+                    </ul> 
+                    </div>
+              
+                    <div class="col" id="footUseful">
+                        <h3>Useful links</h3>
+                        <p><a href="start.html" >Home</a></p>
+                        <p><a href="AboutUs.html"  >About Us</a></p>
+                        <p><a href="index.html#Hi1" >Our Services</a></p>
+                        <p><a href="Help.html" >Help</a></p>
+                        <p><a href="index.html#Hi2" >Recent Events</a></p>
+                        <p><a href="privacy.html" >Privacy Policy</a></p>
+                    </div>
+        
+                    <div class="col" id="footContact">
+                        <h3>Contact Us</h3>
+                        <p><i class="fas fa-home mr-3"></i>  Hyderabad,Telangana, India</p>
+                        <p><i class="fas fa-envelope mr-3"></i>  nithinevents22@gmail.com</p>
+                        <p><i class="fas fa-phone mr-3"></i>  +91 3162859445</p>
+                        <p><i class="fas fa-print mr-3"></i>  +01 335 633 77</p>
+                    </div>      
+                </div>        
+                <hr>            
+                       <div class="social-icons">
+                        <a href="#" ><i class="fab fa-facebook"></i></a>
+                        <a href="#" ><i class="fab fa-twitter"></i></a>
+                        <a href="#" ><i class="fab fa-google-plus"></i></a>
+                        <a href="#" ><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" ><i class="fab fa-youtube"></i></a>
+                    </div>       
+            </div>       
+        </footer>
+
+        <div class="footer-end">
+            <p>&copy; Nithin  Events - All Rights Reserved</p>
+        </div>
+    </div>
+<script>
+    document.getElementById('bookNowStandardButton').addEventListener('click', function() {
+        var customerName = prompt("Please enter your name", "");
+        if (customerName != null) {
+            alert('Thank you, ' + customerName + '! Our team will contact you shortly for further details.');
+            // Add your booking logic here
+        }
+    });
+
+    document.getElementById('bookNowPremiumButton').addEventListener('click', function() {
+        var customerName = prompt("Please enter your name", "");
+        if (customerName != null) {
+            alert('Thank you, ' + customerName + '! Our team will contact you shortly for further details.');
+            // Add your booking logic here
+        }
+    });
+    var slideIndex = 0;
+    carousel();
+
+    function carousel() {
+        var slides = document.querySelectorAll('.image-grid');
+        for (var i = 0; i < slides.length; i++) {
+            slides[i].style.display = 'none';
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+            slideIndex = 1;
+        }
+        slides[slideIndex - 1].style.display = 'flex'; // Display the current slide
+        setTimeout(carousel, 2000); // Change image every 2 seconds
+    }
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

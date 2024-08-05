@@ -1,0 +1,273 @@
+<!-- views/manageEmployees.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Employees</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      position: relative; /* Added position relative to the body */
+      min-height: 100vh; /* Added to ensure the footer stays at the bottom */
+    }
+    h1 {
+      text-align: center;
+      margin-top: 20px;
+    }
+    table {
+      width: 90%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    th, td {
+      border: 1px solid #dddddd;
+      padding: 12px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+      font-weight: bold;
+    }
+    td a {
+      color: blue;
+      text-decoration: none;
+      margin-right: 10px;
+    }
+    td a:hover {
+      text-decoration: underline;
+    }
+    td form {
+      display: inline;
+    }
+    td form button {
+      background-color: #ff6347;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    td form button:hover {
+      background-color: #ff4c00;
+    }
+    .footer {
+      text-align: center;
+      margin-top: 20px;
+      background-color: #f2f2f2;
+      padding: 10px;
+      width: 100%;
+      box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+      margin-left: auto;
+      margin-right: auto;
+      width: 90%;
+
+    }
+    .footer a {
+      color: blue;
+      text-decoration: none;
+    }
+    .footer a:hover {
+      text-decoration: underline;
+    }
+     
+    #show{
+      display: block;
+    }
+    #hide{
+      display: none;
+    }
+
+    input[type="email"],
+    input[type="text"],
+    input[type="password"],
+    input[type="number"],
+    input[type="date"],select {
+      width: calc(100% - 20px);
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+      box-sizing: border-box; /* Ensure input width includes padding and border */
+    }
+
+    #createform {
+  display: none;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  width: 80%; /* Adjusted width for better responsiveness */
+  max-width: 500px; /* Added max-width to ensure form doesn't stretch too wide */
+  margin: 20px auto;
+}
+
+/* Added style for form button */
+#createform button {
+  background-color: #4CAF50; /* Green */
+  color: white;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+#createform button:hover {
+  background-color: #45a049; /* Darker green */
+}
+
+/* Adjusted style for footer links */
+.footer a {
+  color: blue;
+  text-decoration: none;
+  margin: 0 10px; /* Added margin to separate links */
+}
+
+/* Added hover effect for footer links */
+.footer a:hover {
+  text-decoration: underline;
+}
+  </style>
+
+</head>
+<body>
+  <h1>Manage Employees</h1>
+
+  <div class="footer" id="show">
+    <a href="#" onclick="showCreateUserForm()">Create Employee</a>
+  </div> 
+
+  <div class="footer" id="hide">
+    <a href="#" onclick="hideCreateUserForm()">Cancel</a>
+  </div> 
+
+  <div id="createform">
+    <form action="/register" method="post">
+  
+      <input type="text" id="firstName" name="firstName" required placeholder="First Name"><br>
+     
+      <input type="text" id="lastName" name="lastName" required placeholder="Last Name"><br>
+  
+      
+      <input type="email" id="email" name="email" required placeholder="Email"><br>
+
+     
+      <input type="text" id="phoneNumber" name="phoneNumber" required placeholder="Phone Number"><br>
+
+      <select id="role" name="role" required>
+        <option value="" disabled selected hidden>Select Designation</option>
+        <option value="Employee">Employee</option>
+        <option value="Event manager">Event manager</option>
+        <option value="Event coordinator">Event coordinator</option>
+        <option value="Event sales">Event sales</option>
+        <option value="admin">admin</option>
+    </select>
+
+
+      <input type="text" id="previousWorkPlace" name="previousWorkPlace" required placeholder="Previous Workplace"><br>
+
+      <input type="Number" id="experience" name="experience" required placeholder="Experience"><br>
+
+     
+      <input type="text" id="education" name="education" required placeholder="Education"><br>
+
+           
+      <input type="password" id="password" name="password" required placeholder="Password"><br>
+
+      
+      <input type="text" id="skills" name="skills" required placeholder="Skills"><br>
+
+      
+      <input type="text" placeholder="Availability" onfocus="(this.type='date')" id="availability" name="availability" >
+       
+      <button type="submit" class="btn">Add</button>    
+    </form>
+  </div>
+
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Employee Name</th>
+        <th>Role</th>
+        <th>Email</th>
+        <th>Phone Number</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% employees.forEach(function(employee) { %>
+        <tr>
+          <td><%= employee.lastName %> <%= employee.firstName %></td>
+          <td><%= employee.role %></td>
+          <td><%= employee.email%></td>
+          <td><%= employee.phoneNumber %></td>
+          <td>
+            <% if (employee._id.toString() !== employee._id.toString()) { %>
+              <!-- Only show the delete button for employees other than the current user -->
+
+            <% } %>
+            <a href="/empempupdate/<%= employee._id %>" id="empempupdate">Update</a>
+            <a href="/view-logs1/<%= employee.email %>">View Logs</a>
+            <form action="/delete-empemp/<%= employee._id %>" method="POST" onsubmit="return confirm('Are you sure you want to delete this user?')">
+              <button type="submit">Delete</button>  
+            </form>
+          </td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+
+  <div class="footer" id="otheremplogs">
+    <a href="/otheremplogs">Other Employee Logs</a>
+  </div>
+
+  <script>
+
+if(!('<%= employee.role %>' === 'admin')){
+   document.getElementById('show').style.display='none';
+    } 
+
+ if('<%= employee.role %>' == 'Event coordinator'||'<%= employee.role %>' == 'Event manager'){
+    document.getElementById('otheremplogs').style.display='None';
+  }
+  if(!('<%= employee.role %>' === 'admin')){
+    var forms = document.getElementsByTagName('form');
+    for (var i = 0; i < forms.length; i++) {
+        forms[i].style.display = 'none';
+    }
+}
+
+
+if(!('<%= employee.role %>' == 'admin'||'<%= employee.role %>' == 'Event manager')){
+    document.getElementById('empempupdate').style.display='None';
+  }
+
+  function showCreateUserForm() {
+      document.getElementById('createform').style.display = 'block';
+      document.getElementById('show').style.display = 'none';
+      document.getElementById('hide').style.display = 'block';
+    }
+
+    function hideCreateUserForm() {
+      document.getElementById('createform').style.display = 'none';
+      document.getElementById('show').style.display = 'block';
+      document.getElementById('hide').style.display = 'none';
+    }
+
+    function closeform(){
+      document.getElementById('createform').style.display= 'none';
+      document.getElementById('hide').style.display = 'none';
+      document.getElementById('show').style.display = 'block';
+
+    }
+  </script>
+</body>
+</html>

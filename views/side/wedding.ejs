@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nithin  Events - Birthday Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"  />
+    <style>
+        body {
+            font-family: "Montserrat", sans-serif;
+            background: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 100%);
+            background-size: 400% 400%;
+            animation: gradientBackground 10s ease infinite;
+            margin: 0;
+            padding: 40px 0;            
+        }
+
+        @keyframes gradientBackground {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px 20px;           
+            box-shadow: 0 2px 4px honeydew;
+            border-radius: 8px;
+            box-shadow: 1px 1px 25px -2px  honeydew;
+            background: rgba(0, 0, 0, 0.6);
+        }
+        .header {
+            text-align: center;
+            padding: 20px;
+            background-color: rgb(88, 188, 190);
+            color: #fff;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        .header i {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+        .content {
+            margin-top: 20px;
+            padding: 20px;
+            color: #fff;
+        }
+        h2 {
+            color: #fff;
+            margin-top: 0;
+        }
+        p {
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.1s;
+            cursor: pointer;
+            margin-right: 10px;
+        } 
+        .button:last-child {
+            margin-right: 0;
+        }
+        .button:hover {
+            transform: translateY(-4px);
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fad0c4, #ff9a9e);
+        }
+        .button.green {
+            background-color: #45a049;
+        }
+        .services {
+            margin-top: 20px;
+        }
+        .service-item {
+            display: flex;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+
+        .service-icon {
+            font-size: 24px;
+            margin-right: 10px;
+            margin-bottom: 40px;
+            transition: color 0.3s;
+        }
+
+        .service-item:hover .service-icon {
+            color: #fad0c4;
+        }
+
+        .service-details {
+            flex: 1;
+        }
+
+        .service-details h3 {
+            margin-top: 0;
+        }
+
+        .service-details p {
+            margin-bottom: 0;
+            line-height: 1.6;
+        }
+
+        footer {
+            background: #a1a1a1;
+            color: black;
+            padding: 10px 0;
+            font-family: Arial, sans-serif;
+            max-width: 1400px;
+            border-radius: 10px;
+            margin: 30px auto;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-container h1 {
+            font-size: 3rem;
+            margin-top: 15px;
+        }
+
+        .footer-container span {
+            font-size: 3.5rem;
+            color: rgb(118, 118, 252);
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .col {
+            flex-basis: calc(30% - 20px);
+            margin-bottom: 0px;
+        }
+
+        .col h3 {
+            color: rgb(44, 24, 7);
+            border-bottom: 2px solid black;
+            padding-bottom: 10px;
+            font-size: 30px;
+        }
+
+        .col p {
+            margin: 0;
+        }
+
+        .container hr {
+            margin: 10px 0;
+            border: 1px solid black;
+        }
+
+        .social-icons {
+            text-align: center;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            background-color: #555;
+            color: #fff;
+            padding: 10px;
+            border-radius: 50%;
+            margin: 0 5px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 18px;
+            transition: background-color 0.4s;
+        }
+
+        .social-icons a:hover {
+            background-color: rgb(118, 118, 252);
+        }
+
+        #footUseful a {
+            color: #222;
+            text-decoration: none;
+            font-size: 20px;
+            line-height: 1.6;
+        }
+
+        #footUseful a:hover {
+            color: rgb(118, 118, 252);
+        }
+
+        #footContact p {
+            color: #222;
+            font-size: 20px;
+            line-height: 1.8;
+        }
+
+        .footer-end {
+            padding: 20px;
+            background-color: darkcyan;
+            color: #fff;
+            text-align: center;
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+
+        footer ul li {
+            font-size: 20px;
+            color: #222;
+            line-height: 1.8;
+        }
+
+        footer ul {
+            list-style-type: none;
+            margin-left: 4px;
+        }
+
+        footer ul li i {
+            margin-right: 8px;
+        }
+
+        .slideshow {
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .image-grid {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            overflow: hidden;
+        }
+
+        .image-grid img {
+            width: 30%; /* Adjusted width for three images side by side */
+            height: auto;
+            object-fit: cover;
+            transition: transform 0.3s, filter 0.3s;
+        }
+
+        .image-grid img:hover {
+            transform: scale(1.05);
+            filter: brightness(1.2);
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <i class="fas fa-ring"></i> <!-- Wedding ring icon -->
+        <h1>Welcome to Nithin  Events Wedding Services</h1>
+    </div>
+    <div class="content">
+        <h2>Choose Nithin  Events</h2>
+        <p>Nithin  Events is your go-to partner for creating memorable and joyous birthday events. With over 1000+ successful events and a customer satisfaction rate of 98%, we are dedicated to making your special day truly unforgettable.</p>
+        <p>Our team of experienced event planners and decorators are committed to ensuring every detail of your event is perfect. From theme selection to venue decoration, catering, and entertainment, we handle everything with utmost care and professionalism.</p>
+        <p>Whether you're planning a small, intimate gathering or a lavish celebration, Nithin  Events will work closely with you to bring your vision to life. We take pride in our creativity, attention to detail, and commitment to excellence.</p>
+        <p>Choose Nithin  Events for your birthday event and let us help you create unforgettable memories!</p>
+
+        <h2>Our Services</h2>
+        <div class="services">
+            <div class="service-item">
+                <i class="fas fa-map-marker-alt service-icon"></i>
+                <div class="service-details">
+                    <h3>Venue Selection</h3>
+                    <p>We help you choose the perfect venue for your celebration, ensuring it matches your theme and requirements.</p>
+                </div>
+            </div>
+            <div class="service-item">
+                <i class="fas fa-paint-brush service-icon"></i>
+                <div class="service-details">
+                    <h3>Decoration</h3>
+                    <p>Our skilled decorators transform your venue into a stunning space, reflecting your style and personality.</p>
+                </div>
+            </div>
+            <div class="service-item">
+                <i class="fas fa-music service-icon"></i>
+                <div class="service-details">
+                    <h3>Entertainment</h3>
+                    <p>We arrange top-notch entertainment to keep your guests engaged and entertained throughout the event.</p>
+                </div>
+            </div>
+            <div class="service-item">
+                <i class="fas fa-birthday-cake service-icon"></i>
+                <div class="service-details">
+                    <h3>Catering</h3>
+                    <p>Our catering team provides a wide variety of delicious options to satisfy your guests' palates.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="button-container">
+            <a href="contact.html" class="button">Contact Us</a>
+            <a href="services.html" class="button green">View Services</a>
+        </div>
+
+        <h2>Our Recent wedding Events</h2>
+        <div >
+            <div class="slideshow">
+                <!-- Images to be displayed -->
+                <div class="image-grid">
+                    <img src="/wedding/wimage1.jpg" alt="Image 1">
+                    <img src="/wedding/wimage2.jpg" alt="Image 2">
+                    <img src="/wedding/wimage3.jpg" alt="Image 3">
+                </div>
+                <div class="image-grid">
+                    <img src="/wedding/wimage4.jpg" alt="Image 2">
+                    <img src="/wedding/wimage5.jpg" alt="Image 3">
+                    <img src="/wedding/wimage6.jpg" alt="Image 4">
+                </div>
+                <div class="image-grid">
+                    <img src="/wedding/wimage7.jpg" alt="Image 7">
+                    <img src="/wedding/wimage8.jpg" alt="Image 8">
+                    <img src="/wedding/wimage9.jpg" alt="Image 9">
+                </div>
+            </div>
+
+        </div>
+<footer>
+    <div class="footer-container">
+        <h1>Nithin<span>Events</span></h1>
+        <div class="row">
+            <div class="col">
+                <h3>Useful Links</h3>
+                <ul id="footUseful">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Gallery</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <h3>Contact Us</h3>
+                <ul id="footContact">
+                    <li><i class="fas fa-phone"></i>(123) 456-7890</li>
+                    <li><i class="fas fa-envelope"></i>info@nithinevents.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i>1234 Event St, City, Country</li>
+                </ul>
+            </div>
+            <div class="col">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-end">
+        <p>&copy; 2023 Nithin  Events. All rights reserved.</p>
+    </div>
+</footer>
+</body>
+</html>

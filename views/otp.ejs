@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Verification</title>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+</head>
+<body>
+    <div class="form">
+        <h1>OTP Verification</h1>
+        <!-- Input field to enter email, filled with the user's email from profile -->
+        <input type="email" id="email" placeholder="Enter email">
+        <div class="otpverify" style="display: none;">
+            <input type="text" id="otp_inp" placeholder="Enter the OTP sent to your mail">
+            <button class="btn" id="otp-btn" onclick="verifyOTP()">Verify</button>
+            <button class="btn" id="resend-btn" style="display: none;" onclick="resendOTP()">Resend OTP</button>
+        </div>
+    </div>
+    <button class="btn" id="send-btn" onclick="sendOTP()">Send OTP</button>
+    <script>
+        let otp_val;
+        let userToUpdateId;
+
+        function sendOTP() {
+            const email = document.getElementById("email").value;
+            otp_val = Math.floor(Math.random() * 10000);
+            const emailbody = `<h2>Your OTP is </h2> ${otp_val}`;
+
+            Email.send({
+                SecureToken: "b1ea8b76-b3cf-4036-a4f4-ef4a9e949330",
+                To: email,
+                From: "mrramakrishna311@gmail.com",
+                Subject: "OTP Verification",
+                Body: emailbody,
+            }).then(message => {
+                if (message === "OK") {
+                    alert("OTP sent to your email: " + email);
+                    document.querySelector(".otpverify").style.display = "block";
+                    document.getElementById('send-btn').style.display = 'none';
+                    document.getElementById('resend-btn').style.display = 'block';
+                    document.getElementById('otp_inp').value = '';
+                }
+            });
+        }
+
+        function resendOTP() {
+            sendOTP();
+        }
+
+        function verifyOTP() {
+            const otp_inp = document.getElementById('otp_inp').value;
+            if (otp_inp === otp_val.toString()) {
+                alert("OTP verified...");
+                window.location.href = "/update-user3/" + userToUpdateId;
+            } else {
+                alert("Invalid OTP");
+            }
+        }
+    </script>
+</body>
+</html>

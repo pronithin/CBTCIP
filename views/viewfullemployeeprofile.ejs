@@ -1,0 +1,99 @@
+<!-- views/manageEmployees.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>View full employee profile</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
+
+    .profile {
+      border: 1px solid #ccc;
+      padding: 20px;
+      max-width: 400px;
+    }
+
+    .profile h1 {
+      text-align: center;
+      font-size: 24px; /* Increase font size */
+      margin-bottom: 20px; /* Increase gap below heading */
+    }
+
+    .profile label {
+      font-weight: bold;
+      font-size: 23px; /* Increase font size */
+    }
+
+    .profile span {
+      font-size: 22px; /* Increase font size */
+      line-height: 1.5; /* Adjust gap between lines */
+    }
+
+    .btn {
+      display: block;
+      margin-top: 20px;
+      text-align: center;
+      padding: 8px 12px;
+      background-color: #007bff;
+      color: #fff;
+      text-decoration: none;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 25px;
+    }
+
+    .profile h1{
+      font-size: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="profile">
+    <h1>Profile</h1>
+    <div>
+      <label>Username:</label>
+      <span><%= employee.firstName %> <%= employee.lastName %></span>
+    </div>
+    <div>
+      <label>Role:</label>
+      <span><%= employee.role %></span>
+    </div>
+    <div>
+      <label>Email:</label>
+      <span><%= employee.email %></span>
+    </div>
+    <div>
+      <label>PhoneNumber:</label>
+      <span><%= employee.phoneNumber %></span>
+    </div>
+    <div>
+      <label>Skills:</label>
+      <span><%= employee.skills %></span>
+    </div>
+    <div>
+      <label>Availability:</label>
+      <span><%= employee.availability %></span>
+    </div>
+    <div>
+      <label>Education:</label>
+      <span><%= employee.education %></span>
+    </div>
+    <div>
+      <label>Experience:</label>
+      <span><%= employee.experience %></span>
+    </div>
+    <div>
+      <a class="btn" href="/selfempupdate/<%= employee._id %>">Update Profile</a>
+    </div>
+  </div>
+</body>
+</html>

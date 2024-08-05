@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  
+</head>
+<body>
+    
+    <header class="header">
+    <a href="/" class=" logo" style="font-size: 4rem;"><span>N</span>ithin <span>E</span>vents</a>
+    <nav class="navbar">
+    <a href="/">Home</a>
+    <a href="/AboutUs">About  Us</a>
+    <a href="#Hi1">Our Services</a>
+    <a href="/Help">Help</a>
+    <a href="#Hi2">Recent Events</a>
+    <button id="buttonProfile" onclick="openProfile()">Profile</button>
+
+  </nav>  
+    </header>
+    <div class="intro-section">
+      <h2>Welcome to <span>N</span>ithin <span>E</span>vents</h2>
+      <p>Your premier choice for unforgettable events.</p>
+      <p >At Nithin  Events, we specialize in creating extraordinary experiences for every occasion. With our team of dedicated professionals and attention to detail, we turn your vision into reality.</p>
+      <p>Explore our wide range of services and let us make your next event truly exceptional.</p>
+      <a href="/AboutUs" class="explore-button">Explore more</a>
+  </div>
+
+  
+  <button onclick="topFunction()" id="top-bottomBtn" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <div id="profileContainer" >
+    <span onclick="closeProfile()" class="close">&times;</span>
+    <h1>Welcome <%= user.username %>!</h1>
+    <p>Your email: <%= user.email %></p>
+    <p>Your role: <%= user.role %></p>
+    <td>
+      <a href="/selfuserupdate/<%= user._id %>">Update </a> |
+      <a href="/logout">Log Out</a>
+      <form action="/delete-userself/<%= user._id %>" method="POST" onsubmit="return confirm('Are you sure you want to delete your account?')" id="deleteform">
+        <button type="submit" id="deletemy">Delete</button>  
+      </form>
+      <a href="/mybooking">My bookings</a>
+</div>
+
+  
+     <h1 id="Hi1" style="color: #222;visibility: hidden;">Hi</h1>
+    <h1 id="our-services" style="margin-top: 60px; font-style: italic; margin-left: 5px; text-align: center; font-size:40px; color: #fff;;">Our <span>Services</span> </h1>
+
+<div class="icons">
+    <div class="icons1">
+<a href="/birthdayparty">
+<div>
+<img src="/icons/birthday-cake (1).png" id="img1">
+<h2>Birthday</h2>
+</div> </a>
+
+<a href="/cultural">
+<div>
+  <img src="/icons/party-people.png" id="img2" >
+  <h2>Cultural Events</h2>
+  </div> </a>
+
+<a href="/dj">  
+  <div>
+    <img src="/icons/dj.png" id="img3" >
+    <h2>DJ's</h2>
+    </div> </a> 
+
+<a href="/wedding">
+    <div>
+      <img src="/icons/mandap.png" id="img4">
+      <h2>Marriage</h2>
+      </div></a>
+ 
+<a href="/corporate">      
+      <div>
+        <img src="/icons/meeting.png" id="img5">
+        <h2>Corporate Events</h2>
+        </div></a>
+      
+ </div>
+
+<div class="icons2">
+
+<a href="/wa">
+  <div>
+  <img src="/icons/couple.png" id="img6">
+  <h2>Anniversary</h2>
+  </div></a>
+
+<a href="/marthon">  
+  <div>
+  <img src="/icons/running.png" id="img7">
+  <h2>Marathons</h2>
+  </div></a>
+
+<a href="/housewarming"> 
+  <div>
+    <img src="/icons/house.png" id="img8">
+    <h2>House Openings</h2>
+    </div></a>
+ 
+<a href="/rec">  
+    <div>
+      <img src="/icons/wedding-arch.png" id="img9">
+      <h2>Reception</h2>
+      </div> </a>
+
+<a href="/gettogether">
+    <div>
+      <img src="/icons/togetherness.png" id="img10">
+      <h2>Get togethers</h2>
+    </div></a>
+</div>
+</div>
+
+<div class="why-work-outside ">
+  <h1>Why work with us<span>?</span> </h1> 
+ <div class="why-work">
+  
+   <div class="why-work-inside">
+   <i class="fa-solid fa-message"></i>
+   <h2>Communication</h2>
+   <p>Each of our clients is assigned an event team, who is responsible for working with you throughout the process and keeping you updated at every time.</p>
+   </div> 
+ 
+   <div class="why-work-inside">
+   <i class="fa-solid fa-thumbs-up"></i>
+   <h2>Convenience</h2>
+   <p>We handle everything from concept to production to clean-up, you save precious hours of yours time and undue stress when we put on your event</p> 
+   </div> 
+   
+   <div class="why-work-inside">
+   <i class="fa-solid fa-handshake"></i>  
+   <h2>Relationship</h2>
+   <p> We have developed relationships with the best local talents in every category. You know you're getting the best of the best when you work with us. </P>
+   </div>  
+ 
+ </div> 
+</div> 
+
+<div class="outside-grid-container">
+
+  <p style="visibility: hidden;" id="Hi2">ji</p>
+
+<h1 id="recent-events" style="margin-top: 30px; font-style: italic; text-align: center; font-size:40px; color: #fff;;">Recent<span> Events</span> </h1>
+
+<div class="grid-container">
+
+  <div class="main-container">
+      <img class="image" src="/recent/recent-1.jpg">
+      <div class="overlay">
+          <h1>Marraige</h1>
+          <h2>Venue:- Visakhapatnam</h2>
+  <h2>Date:- 7nd July 2023</h2>
+  <h2>Time:- 6:00 to 10:00 Pm</h2>
+      </div>
+  </div>
+
+  <div class="main-container">
+      <img class="image" src="/recent/recent-2.jpg">
+      <div class="overlay">
+          <h1>Reception</h1>
+          <h2>Venue:- Anakapalli</h2>
+  <h2>Date:- 5th Aug 2023</h2>
+  <h2>Time:- 9:00 to 12:00 Pm</h2>
+      </div>
+  </div>
+
+  <div class="main-container">
+      <img class="image" src="/recent/recent-3.jpg" >
+      <div class="overlay">
+          <h1>Corperative Event</h1>
+          <h2>Venue:- Chennai</h2>
+  <h2>Date:- 23rd Aug 2023</h2>
+  <h2>Time:- 9:00 to 11:30 Am</h2>
+      </div>
+  </div>
+
+  <!-- Second Row -->
+  <div class="main-container">
+      <img class="image" src="/recent/recent-4.jpg">
+      <div class="overlay">
+          <h1>Birthday</h1>
+          <h2>Venue:- Tirupathi</h2>
+  <h2>Date:- 22nd Sep 2023</h2>
+  <h2>Time:- 6:00 to 9:00 Pm</h2>
+      </div>
+  </div>
+
+  <div class="main-container">
+      <img class="image" src="/recent/recent-5.jpeg">
+      <div class="overlay">
+          <h1>Anniversary</h1>
+          <h2>Venue:- Hyderabad</h2>
+  <h2>Date:- 15th Sep 2023</h2>
+  <h2>Time:- 10:00 Pm to 1:00 Am</h2>
+      </div>
+  </div>
+
+  <div class="main-container">
+      <img class="image" src="/recent/recent-6.jpg">
+      <div class="overlay">
+          <h1>Get togethers</h1>
+          <h2>Venue:- Vizayanagrm</h2>
+  <h2>Date:- 10th Dec 2023</h2>
+  <h2>Time:- 11:00 Am to 2:00 Pm</h2>
+      </div>
+  </div>
+</div>
+</div> 
+
+
+<div class="discounts-section">
+  <h2 >Seasonal <span>Discounts</span></h2>
+  <p>Check out our latest seasonal discounts and trends to make your event planning even more affordable and stylish!</p>
+  <div class="discounts-grid">
+    <div class="discount-item">
+      <h3>Summer Special</h3>
+      <p>Get 15% off on outdoor events booked between June and August. Don't miss out on creating memorable summer celebrations!</p>
+    </div>
+    <div class="discount-item">
+      <h3>Winter Wonderland</h3>
+      <p>Planning a winter-themed event? Enjoy discounted rates on winter decor and entertainment packages. Contact us for details!</p>
+    </div>
+  </div>
+</div>
+
+<h1 style="margin-top: 60px; font-style: italic; text-align: center; font-size:40px; color: #fff;;">Our <span>Team</span> </h1>
+
+<div class="slideshow">
+  <div class="image-grid">
+
+      <div class="inside-image-grid">
+      <img src="/employee/employee-1.jpg" alt="Image 1">
+      <h1>Mr.Surya</h1>
+      <h2>Event Manager</h2>
+      <hr>
+      <div class="employee-social-icons">
+          <a href="#" ><i class="fab fa-facebook"></i></a>
+          <a href="#" ><i class="fab fa-twitter"></i></a>
+          <a href="#" ><i class="fab fa-linkedin-in"></i></a>
+      </div>
+      </div>
+
+      <div class="inside-image-grid">
+      <img src="/employee/employee-2.jpg" alt="Image 2">
+      <h1>Mr.Karthik</h1> 
+      <h2>Event Coordinator</h2>
+      <hr>
+      <div class="employee-social-icons">
+          <a href="#" ><i class="fab fa-facebook"></i></a>
+          <a href="#" ><i class="fab fa-twitter"></i></a>
+          <a href="#" ><i class="fab fa-linkedin-in"></i></a>
+      </div>
+      </div>
+
+      <div class="inside-image-grid">
+      <img src="/employee/employee-3.jpeg" alt="Image 3">
+      <h1>Ms.Swathika</h1>  
+      <h2>Event Assistant</h2>
+      <hr>
+      <div class="employee-social-icons">
+          <a href="#" ><i class="fab fa-facebook"></i></a>
+          <a href="#" ><i class="fab fa-twitter"></i></a>
+          <a href="#" ><i class="fab fa-linkedin-in"></i></a>
+      </div>  
+      </div>
+
+  </div>
+
+  <div class="image-grid">
+
+  <div class="inside-image-grid">
+      <img src="/employee/employee-4.jpg" alt="Image 2">
+      <h1>Ms.Vyshu</h1>
+      <h2>Event Marketing</h2>
+      <hr>
+      <div class="employee-social-icons">
+          <a href="#" ><i class="fab fa-facebook"></i></a>
+          <a href="#" ><i class="fab fa-twitter"></i></a>
+          <a href="#" ><i class="fab fa-linkedin-in"></i></a>
+      </div>
+  </div>
+
+  <div class="inside-image-grid">
+      <img src="/employee/employee-5.jpeg" alt="Image 3">
+      <h1>Mr.Tharun</h1>
+      <h2>Event Planner</h2>
+      <hr>
+      <div class="employee-social-icons">
+          <a href="#" ><i class="fab fa-facebook"></i></a>
+          <a href="#" ><i class="fab fa-twitter"></i></a>
+          <a href="#" ><i class="fab fa-linkedin-in"></i></a>
+      </div>
+  </div>
+
+  <div class="inside-image-grid">
+      <img src="/employee/employee-6.jpeg" alt="Image 4">
+      <h1>Mr.Ram</h1>
+      <h2>Sales Manager</h2>
+      <hr>
+      <div class="employee-social-icons">
+          <a href="#" ><i class="fab fa-facebook"></i></a>
+          <a href="#" ><i class="fab fa-twitter"></i></a>
+          <a href="#" ><i class="fab fa-linkedin-in"></i></a>
+      </div>
+  </div>
+</div>
+</div>
+
+<a href="/AboutUs#reg" class="explore-employee">Explore More</a>
+
+<footer>
+  <div class="container">
+
+         <div class="row">
+          <div class="col">             
+              <h2><span>N</span>ithin <span>E</span>vents</h2>
+              <ul>
+                  <li> <i class="fa-solid fa-location-dot"></i>Hyderabad</li>
+                  <li> <i class="fa-solid fa-location-dot"></i>Chennai</li>
+                  <li> <i class="fa-solid fa-location-dot"></i>Bangalore</li>
+                  <li> <i class="fa-solid fa-location-dot"></i>Vizag</li>
+                  <li> <i class="fa-solid fa-location-dot"></i>Vijayawada</li> 
+                  <li> <i class="fa-solid fa-location-dot"></i>Warangal</li> 
+              </ul>  
+          </div>
+
+          <div class="col" id="footUseful">
+              <h1>Useful links</h1>
+              <p><a href="/" >Home</a></p>
+              <p><a href="/AboutUs"  >About Us</a></p>
+              <p><a href="#Hi1" >Our Services</a></p>
+              <p><a href="/Help" >Help</a></p>
+              <p><a href="#Hi2" >Recent Events</a></p>
+              <p><a href="/privacy" >Privacy Policy</a></p>
+          </div>
+
+          <div class="col" id="footContact">
+              <h1>Contact Us</h1>
+              <p><i class="fas fa-home mr-3"></i>  Hyderabad,Telangana, India</p>
+              <p><i class="fas fa-envelope mr-3"></i>  nithinevents22@gmail.com</p>
+              <p><i class="fas fa-phone mr-3"></i>  +91 3162859445</p>
+              <p><i class="fas fa-print mr-3"></i>  +01 335 633 77</p>
+          </div>
+
+      </div>
+      <hr>    
+             <div class="social-icons">
+              <a href="#" ><i class="fab fa-facebook"></i></a>
+              <a href="#" ><i class="fab fa-twitter"></i></a>
+              <a href="#" ><i class="fab fa-google-plus"></i></a>
+              <a href="#" ><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" ><i class="fab fa-youtube"></i></a>
+          </div>
+  </div>
+</footer>
+
+<script src="index.js"> </script>
+</body>
+</html>

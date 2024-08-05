@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help and Support</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(45deg, #141e30, #243b55); /* Gradient background */
+            color: #fff; /* Light text color */
+            line-height: 1.6;
+            transition: background 0.5s ease-in-out; /* Smooth transition for background color */
+        }
+
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 50px 20px;
+            background-color: rgba(0, 0, 0, 0.9); /* Semi-transparent dark background */
+            border-radius: 30px;
+            box-shadow: 0 2px 4px #fff, 0 2px 4px honeydew, 1px 1px 25px -2px honeydew; /* Multicolor shadow */
+            transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+        }
+
+        .container:hover {
+            background-color: rgba(255, 255, 255, 0.1); /* Lighter background on hover */
+            box-shadow: 0 8px 16px rgba(255, 255, 255, 0.1); /* Increase shadow on hover */
+        }
+
+        h1 {
+            text-align: center;
+            color: #FFC107; /* Amber heading color */
+            margin-bottom: 50px;
+            font-size: 42px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            padding: 30px;
+            background-color: #1C1C1C; /* Dark gray background for sections */
+            border-radius: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+        }
+
+        .section:hover {
+            transform: translateY(-5px); /* Move section up slightly on hover */
+            box-shadow: 0 8px 16px rgba(255, 255, 255, 0.1); /* Increase shadow on hover */
+        }
+
+        p {
+            font-size: 22px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: #BBB; 
+        }
+
+        .contact-info, .faq, .feedback, .documentation {
+            margin-bottom: 20px;
+        }
+
+        .contact-info h2, .faq h2, .feedback h2, .documentation h2 {
+            font-size: 35px;
+            font-weight: 500;
+            color: rgb(123, 104, 250);
+        }
+
+        .contact-info ul, .faq ul, .feedback ul, .documentation ul {
+            list-style-type: none;
+            padding: 0;
+            font-size: 20px;
+        }
+
+        .contact-info li, .faq li, .feedback li, .documentation li {
+            margin-bottom: 10px;
+        }
+
+        .documentation h3 {
+            font-size: 26px;
+            color: rgb(118, 118, 170);
+        }
+
+        .documentation ul li {
+            color: #BBB;
+        }
+
+        .question {
+            position: relative;
+            padding: 10px 0 10px 10px;
+            background-color: #444;
+            border-radius: 20px;
+            margin-bottom: 10px;
+            width: 61%;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effect */
+        }
+
+        .question:hover {
+            background-color: #555; /* Slightly lighter background on hover */
+            transform: translateX(10px); /* Slightly move right on hover */
+        }
+
+        .answer {
+            margin-left: 30px;
+            margin-bottom: 20px;
+            width: 59%;
+            display: none; /* Hidden by default */
+            opacity: 0; /* Invisible by default */
+            transition: opacity 0.5s ease; /* Smooth transition for visibility */
+        }
+
+        hr {
+            width: 100%;
+        }
+
+        .arrow-icon {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            color: #fff;
+            cursor: pointer;
+        }
+
+        @keyframes colorChange {
+            0% { color: #FFC107; } /* Amber */
+            25% { color: #e91e63; } /* Pink */
+            50% { color: #3f51b5; } /* Indigo */
+            75% { color: #4caf50; } /* Green */
+            100% { color: #FFC107; } /* Amber */
+        }
+
+        .container:hover h1 {
+            animation: colorChange 3s infinite; /* Infinite color change */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Help and Support</h1>
+
+        <div class="section contact-info">
+            <p>If you need assistance or have any questions, feel free to contact our support team. We're here to help! You can reach out to us via:</p>
+            <ul>
+                <li><i class="fas fa-envelope"></i> <strong>Email:</strong> support@nithinevents.com</li>
+                <li><i class="fas fa-phone"></i> <strong>Phone:</strong> +91 (555) 123-4567</li>
+                <li><i class="fas fa-comments"></i> <strong>24/7 Chat Support:</strong> Available on our website</li>
+            </ul>
+        </div>
+
+        <div class="section faq">
+            <h2>Frequently Asked Questions (FAQ)</h2>
+            <div class="Q">
+                <div class="question"><strong>1.</strong> How do I book an event? <i class="fas fa-chevron-down arrow-icon"></i></div>
+                <div class="answer"><p>You can book an event by filling out the booking form on our website or by contacting our support team.</p><hr></div>
+                
+                <div class="question"><strong>2.</strong> What payment methods do you accept? <i class="fas fa-chevron-down arrow-icon"></i></div>
+                <div class="answer"><p>We accept credit cards, debit cards, PayPal, and bank transfers.</p><hr></div>
+                
+                <div class="question"><strong>3.</strong> Can I cancel or reschedule my event? <i class="fas fa-chevron-down arrow-icon"></i></div>
+                <div class="answer"><p>Yes, you can cancel or reschedule your event. Please contact our support team for assistance.</p><hr></div>
+                
+                <div class="question"><strong>4.</strong> How can I access the recordings of the event? <i class="fas fa-chevron-down arrow-icon"></i></div>
+                <div class="answer"><p>Recordings of the event will be made available on our website after the event concludes. You can log in to your account to access them.</p><hr></div>
+        
+                <div class="question"><strong>5.</strong> Is there a dress code for the event? <i class="fas fa-chevron-down arrow-icon"></i></div>
+                <div class="answer"><p>The dress code for the event is casual. However, for formal events, we may specify a dress code in the event details.</p><hr></div>
+        
+                <div class="question"><strong>6.</strong> Can I bring guests to the event? <i class="fas fa-chevron-down arrow-icon"></i></div>
+                <div class="answer"><p>Some events allow guests, while others may have limitations. Please check the event details or contact our support team for more information.</p><hr></div>
+        
+                <div class="question"><strong>7.</strong> How do I check-in at the event? <i class="fas fa-chevron-down arrow-icon"></i></div>
+                <div class="answer"><p>You can usually check-in at the event venue using your ticket confirmation email or a valid ID. Some events may require you to present a printed ticket or use a mobile app for check-in.</p><hr></div>
+                
+                <div class="question"><strong>8.</strong> What should I do if I encounter technical difficulties during the event? <i class="fas fa-chevron-down arrow-icon"></i></div>
+                <div class="answer"><p>If you experience technical issues, please notify event staff or visit the technical support desk for assistance. We strive to resolve any technical problems promptly to ensure a smooth event experience for all attendees.</p><hr></div>
+                
+                <div class="question"><strong>9.</strong> Are food and beverages provided at the event? <i class="fas fa-chevron-down arrow-icon"></i></div>
+                <div class="answer"><p>Food and beverage options vary depending on the event type and organizer. Some events may offer complimentary refreshments, while others may have food vendors available for purchase. Please check the event details for information about catering.</p><hr></div>
+                
+                <div class="question"><strong>10.</strong> Can I request special accommodations for accessibility needs? <i class="fas fa-chevron-down arrow-icon"></i></div>
+                <div class="answer"><p>Yes, we strive to accommodate attendees with accessibility needs. Please contact our support team in advance to request special accommodations such as wheelchair access, sign language interpretation, or audio description services.</p><hr></div>
+                
+                <div class="question"><strong>11.</strong> Are there discounts available for students or seniors? <i class="fas fa-chevron-down arrow-icon"></i></div>
+                <div class="answer"><p>Some events offer discounted tickets for students, seniors, or members of certain organizations. Please check the event details or contact our support team to inquire about available discounts and eligibility criteria.</p><hr></div>
+            </div>
+        </div>
+
+        <div class="section documentation">
+            <h2>Documentation</h2>
+            <p>Here you can find helpful documentation for troubleshooting common issues and understanding our features.</p>
+            <h3>Troubleshooting Tips</h3>
+            <p>If you encounter any problems while using our platform, here are some troubleshooting tips:</p>
+            <ul>
+                <li>Make sure you are using the latest version of your web browser.</li>
+                <li>Clear your browser cache and cookies.</li>
+                <li>Check your internet connection.</li>
+            </ul>
+            <h3>Feature Explanation</h3>
+            <p>Our platform offers a variety of features to enhance your experience. Here's a brief explanation of some key features:</p>
+            <ul>
+                <li><strong>Event Booking:</strong> Easily book events through our website or contact our support team for assistance.</li>
+                <li><strong>Payment Methods:</strong> We accept various payment methods, including credit cards, debit cards, PayPal, and bank transfers.</li>
+                <li><strong>Event Recordings:</strong> Access recordings of past events through your account after the event concludes.</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let questions = document.querySelectorAll('.faq .question');
+
+            questions.forEach(function(question) {
+                question.addEventListener('click', function() {
+                    let answer = question.nextElementSibling;
+                    let arrowIcon = question.querySelector('.arrow-icon');
+                    if (answer.style.display === 'none' || answer.style.display === '') {
+                        answer.style.display = 'block';
+                        answer.style.opacity = '1';
+                        arrowIcon.classList.remove('fa-chevron-down');
+                        arrowIcon.classList.add('fa-chevron-up');
+                    } else {
+                        answer.style.display = 'none';
+                        answer.style.opacity = '0';
+                        arrowIcon.classList.remove('fa-chevron-up');
+                        arrowIcon.classList.add('fa-chevron-down');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

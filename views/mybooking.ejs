@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Bookings</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    /* Adjust table heading font size */
+    thead th {
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+    <h1>My bookings</h1>
+
+    <table border="1">
+      <thead>
+        <tr>
+          <th>UserName</th>
+          <th>Email</th>
+          <th>Phone Number</th>
+          <th>Address</th>
+          <th>No of Attendees</th>
+          <th>Event Date</th>
+          <th>Special Requests</th>
+          <th>No of Days</th>
+          <th>Event Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% bookings.forEach(booking => { %>
+          <tr>
+            <td><%= booking.firstname %> <%= booking.lastname %></td>
+            <td><%= booking.email %></td>
+            <td><%= booking.phonenumber %></td>
+            <td><%= booking.address %></td>
+            <td><%= booking.noofattendees %></td>
+            <td><%= booking.eventdate %></td>
+            <td><%= booking.specialRequests %></td>
+            <td><%= booking.noofdays %></td>
+            <td><%= booking.eventName %></td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+
+</body>
+</html>

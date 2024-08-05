@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OTP Verification</title>
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f8f9fa;
+    }
+
+    .form {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      text-align: center;
+      width: 500px;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    input[type="email"],
+    input[type="text"],
+    input[type="password"],
+    input[type="number"] {
+      width: calc(100% - 20px);
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+      box-sizing: border-box; /* Ensure input width includes padding and border */
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: #0056b3;
+    }
+
+    .otpverify {
+      display: none;
+    }
+
+    .btn-group {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 20px;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="otpVerification">
+    <div class="form">
+      <h1>OTP Verification</h1>
+      <!-- Input field to enter email, filled with the user's email from profile -->
+      <input type="email" id="email" placeholder="Enter email">
+      <div class="otpverify" style="display: none;">
+        <input type="text" id="otp_inp" placeholder="Enter the OTP sent to your mail">
+        <div class="btn-group">
+          <button class="btn" id="otp-btn" onclick="verifyOTP()">Verify</button>
+          <button class="btn" id="resend-btn" style="display: none;" onclick="resendOTP()">Resend OTP</button>
+        </div>
+      </div>
+    </div>
+    <div class="btn-group">
+    <button class="btn" id="send-btn" onclick="sendOTP()">Send OTP</button>
+    </div>
+    <input type="hidden" id="loggedInUserEmail" value="<%= userToUpdate.email %>">
+  </div>
+
+  <div id="updateProfile" style="display: none;">
+    <h1>Update Profile</h1>
+    <form id="updateForm" action="/selfempupdate/<%= userToUpdate._id %>" method="post">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" value="<%= userToUpdate.email %>" ><br>
+     
+      <label for="firstName">First Name:</label>
+      <input type="text" id="firstName" name="firstName" value="<%= userToUpdate.firstName %>" ><br>
+
+      <label for="lastName">Last Name:</label>
+      <input type="text" id="lastName" name="lastName" value="<%= userToUpdate.lastName %>" ><br>
+  
+      <label for="phoneNumber">Phone Number:</label>
+      <input type="text" id="phoneNumber" name="phoneNumber" value="<%= userToUpdate.phoneNumber %>" ><br>
+
+      <label for="password">password:</label>
+      <input type="password" id="password" name="password" value="<%= userToUpdate.password %>" ><br>
+
+      <label for="experience">experience:</label>
+      <input type="text" id="experience" name="experience" value="<%= userToUpdate.experience %>" ><br>
+      
+      <label for="skills">skills:</label>
+      <input type="text" id="skills" name="skills" value="<%= userToUpdate.skills %>" ><br>
+
+    <button type="submit" class="btn">Update</button>    
+    </form>
+  </div>
+
+  <script>
+    let otp_val;
+    let userToUpdateId;
+
+    function sendOTP() {
+      const loggedInUserEmail = document.getElementById("loggedInUserEmail").value;
+      const enteredEmail = document.getElementById("email").value;
+
+      if (loggedInUserEmail !== enteredEmail) {
+        alert("Entered email does not match with the logged-in user's email.");
+        return;
+      }
+
+      otp_val = Math.floor(Math.random() * 10000);
+      const emailbody = `<h2>Your OTP is </h2> ${otp_val}`;
+
+      Email.send({
+        SecureToken: "b1ea8b76-b3cf-4036-a4f4-ef4a9e949330",
+        To: enteredEmail,
+        From: "mrramakrishna311@gmail.com",
+        Subject: "OTP Verification",
+        Body: emailbody,
+      }).then(message => {
+        if (message === "OK") {
+          alert("OTP sent to your email: " + enteredEmail);
+          document.querySelector(".otpverify").style.display = "block";
+          document.getElementById('send-btn').style.display = 'none';
+          document.getElementById('resend-btn').style.display = 'block';
+          document.getElementById('otp_inp').value = '';
+        }
+      });
+    }
+
+    function resendOTP() {
+      sendOTP();
+    }
+
+    function verifyOTP() {
+      const otp_inp = document.getElementById('otp_inp').value;
+      if (otp_inp === otp_val.toString()) {
+        alert("OTP verified...");
+        // Hide the OTP verification section
+        document.getElementById('otpVerification').style.display = 'none';
+        // Show the profile update section after successful OTP verification
+        document.getElementById('updateProfile').style.display = 'block';
+        userToUpdateId = 'some_user_id'; // Set the userToUpdateId here
+      } else {
+        alert("Invalid OTP");
+      }
+    }
+
+    // Get form and input elements
+    const updateForm = document.getElementById('updateForm');
+    const emailInput = document.getElementById('profileEmail');
+    const passwordInput = document.getElementById('profilePassword');
+    const updateButton = document.getElementById('updateButton');
+
+    // Function to check if the form fields are empty
+    const areFieldsEmpty = () => {
+      return !emailInput.value.trim() || !passwordInput.value.trim();
+    };
+
+    // Function to enable/disable submit button based on changes in form fields
+    const handleFormChanges = () => {
+      const emailChanged = emailInput.value !== '<%= userToUpdate.email %>';
+      const passwordChanged = passwordInput.value !== '<%= userToUpdate.password %>';
+      updateButton.disabled = areFieldsEmpty() || !(emailChanged || passwordChanged);
+    };
+
+    // Add event listeners to form fields
+    emailInput.addEventListener('input', handleFormChanges);
+    passwordInput.addEventListener('input', handleFormChanges);
+  </script>
+</body>
+</html>

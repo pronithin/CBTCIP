@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nithin  Events - DJ Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"  />
+    <style>
+        body {
+            font-family: "Montserrat", sans-serif;
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fad0c4, #ffdde1, #f3e6e8);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            margin: 0;
+            padding: 40px 0;            
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px 20px;           
+            box-shadow: 0 2px 4px honeydew;
+            border-radius: 8px;
+            box-shadow: 1px 1px 25px -2px honeydew;
+        }
+
+        .header {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(90deg, #ff8a00, #e52e71);
+            color: #fff;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            animation: colorchange 3s infinite alternate;
+        }
+
+        @keyframes colorchange {
+            0% { background: #ff8a00; }
+            100% { background: #e52e71; }
+        }
+
+        .header i {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .content {
+            margin-top: 20px;
+            padding: 20px;
+            color: #fff;
+        }
+
+        h2 {
+            color: #fff;
+            margin-top: 0;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        .button:last-child {
+            margin-right: 0;
+        }
+
+        .button:hover {
+            background-color: #e52e71;
+            color: #fff;
+            transform: translateY(-4px);
+        }
+
+        .button.green {
+            background-color: #45a049;
+        }
+
+        .services {
+            margin-top: 20px;
+        }
+
+        .service-item {
+            display: flex;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+
+        .service-icon {
+            font-size: 24px;
+            margin-right: 10px;
+            margin-bottom: 40px;
+            transition: color 0.3s;
+        }
+
+        .service-item:hover .service-icon {
+            color: #e52e71;
+        }
+
+        .service-details {
+            flex: 1;
+        }
+
+        .service-details h3 {
+            margin-top: 0;
+        }
+
+        .service-details p {
+            margin-bottom: 0;
+            line-height: 1.6;
+        }
+
+        footer {
+            background: #BBB;
+            color: black;
+            padding: 0 0 10px 0;
+            font-family: Arial, sans-serif;
+            max-width: 1400px;
+            border-radius: 10px;
+            margin: 30px auto;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-container h1 {
+            font-size: 3rem;
+            margin-top: 15px;
+        }
+
+        .footer-container span {
+            font-size: 3.5rem;
+            color: rgb(118, 118, 252);
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .col {
+            flex-basis: calc(30% - 20px);
+            margin-bottom: 0px;
+        }
+
+        .col h3 {
+            color: rgb(44, 24, 7);
+            border-bottom: 2px solid black;
+            padding-bottom: 10px;
+            font-size: 30px;
+        }
+
+        .col p {
+            margin: 0;
+        } 
+
+        .container hr { 
+            margin: 10px 0;
+            border: 1px solid black;
+        }
+
+        .social-icons {
+            text-align: center;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            background-color: #555;
+            color: #fff;
+            padding: 10px;
+            border-radius: 50%;
+            margin: 0 5px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 18px;
+            transition: background-color 0.4s;
+        }
+
+        .social-icons a:hover {
+            background-color: rgb(118, 118, 252);
+        }
+
+        #footUseful a {
+            color: #222;
+            text-decoration: none;
+            font-size: 20px;
+            line-height: 1.6;
+        }
+
+        #footUseful a:hover {
+            color: rgb(118, 118, 252);
+        }
+
+        #footContact p {
+            color: #222;
+            font-size: 20px;
+            line-height: 1.8;
+        }
+
+        .footer-end {
+            padding: 20px;
+            background-color: darkcyan;
+            color: #fff;
+            text-align: center;
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+
+        footer ul li {
+            font-size: 20px;
+            color: #222;
+            line-height: 1.8;
+        }
+
+        footer ul {
+            list-style-type: none;
+            margin-left: 4px;
+        }
+
+        footer ul li i {
+            margin-right: 8px;
+        }   
+
+        .slideshow {
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .image-grid {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            overflow: hidden;
+        }
+
+        .image-grid img {
+            width: 30%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <i class="fas fa-music"></i>
+        <h1>Welcome to Nithin  Events DJ Services</h1>
+    </div>
+   
+    <div class="content">
+        <h2>Choose Nithin  Events</h2>
+        <p>Nithin  Events is your ultimate destination for unforgettable DJ experiences. With a team of talented DJs and state-of-the-art equipment, we guarantee to make your event a hit!</p>
+        <p>From weddings to corporate events and everything in between, Nithin  Events offers a range of DJ services tailored to your specific needs. Our DJs are experienced in all music genres and are dedicated to keeping your guests entertained throughout the event.</p>
+        <p>With Nithin  Events, you can relax and enjoy your event while we take care of the music and entertainment. Choose Nithin  Events for your next event and let's make it a party to remember!</p>
+                
+        <h2>Our Services</h2>
+        <div class="services">
+            <div class="service-item">
+                <i class="fas fa-microphone-alt service-icon"></i>
+                <div class="service-details">
+                    <h3>Professional DJs</h3>
+                    <p>Our team of professional DJs will keep your guests dancing all night long with their exceptional mixing and music selection skills.</p>
+                </div>
+            </div>
+            <div class="service-item">
+                <i class="fas fa-volume-up service-icon"></i>
+                <div class="service-details">
+                    <h3>State-of-the-Art Equipment</h3>
+                    <p>We use the latest sound and lighting equipment to create an immersive and unforgettable experience for your guests.</p>
+                </div>
+            </div>
+            <div class="service-item">
+                <i class="fas fa-music service-icon"></i>
+                <div class="service-details">
+                    <h3>Customized Playlist</h3>
+                    <p>We work closely with you to create a customized playlist that reflects your musical preferences and event theme.</p>
+                </div>
+            </div>
+            <div class="service-item">
+                <i class="fas fa-handshake service-icon"></i>
+                <div class="service-details">
+                    <h3>Personalized Service</h3>
+                    <p>Our team is dedicated to providing personalized service and ensuring that your event runs smoothly from start to finish.</p>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="button">Learn More</a>
+        <a href="#" class="button green">Contact Us</a>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-container">
+        <h1>Contact Us at <span>Nithin  Events</span></h1>
+        <hr>
+        <div class="row">
+            <div class="col">
+                <h3>About Us</h3>
+                <p>Nithin  Events provides top-notch DJ services for all occasions. Our team of professional DJs is passionate about music and dedicated to making your event a success.</p>
+            </div>
+            <div class="col" id="footUseful">
+                <h3>Useful Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Our Services</a></li>
+                    <li><a href="#">Testimonials</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="col" id="footContact">
+                <h3>Contact</h3>
+                <p>Nithin  Events DJ Services<br>123 Party Street, Music City, USA<br>Email: info@nithinevents.com<br>Phone: (123) 456-7890</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-end">
+            <p>&copy; 2024 Nithin  Events DJ Services. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

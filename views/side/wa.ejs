@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nithin  Events - Anniversary Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"  />
+    <style>
+        body {
+            font-family: "Montserrat", sans-serif;
+            background: linear-gradient(to right, #ff7f50, #ff6347, #ffd700);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            margin: 0;
+            padding: 40px 0;
+            transition: background 0.5s ease;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        body:hover {
+            background: linear-gradient(to right, #6a5acd, #7fffd4, #ff1493);
+            background-size: 400% 400%;
+            animation: gradient-hover 10s ease infinite;
+        }
+
+        @keyframes gradient-hover {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px 20px;
+            box-shadow: 1px 1px 25px -2px honeydew;
+            border-radius: 8px;
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        .header {
+            text-align: center;
+            padding: 20px;
+            background-color: rgb(88, 188, 190);
+            color: #fff;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+        .header i {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .content {
+            margin-top: 20px;
+            padding: 20px;
+            color: #fff;
+        }
+
+        h2 {
+            color: #fff;
+            margin-top: 0;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        .button:last-child {
+            margin-right: 0;
+        }
+
+        .button:hover {
+            background-color: #555;
+            transform: translateY(-4px);
+        }
+
+        .button.green {
+            background-color: #45a049;
+        }
+
+        .services {
+            margin-top: 20px;
+            color: #fff;
+        }
+
+        .service-item {
+            display: flex;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+
+        .packages {
+            color: #fff;
+        }
+
+        .service-icon {
+            font-size: 24px;
+            margin-right: 10px;
+            margin-bottom: 40px;
+        }
+
+        .service-details {
+            flex: 1;
+        }
+
+        .service-details h3 {
+            margin-top: 0;
+        }
+
+        .service-details p {
+            margin-bottom: 0;
+            line-height: 1.6;
+        }
+
+        footer {
+            background: #BBB;
+            color: black;
+            padding: 0 0 10px 0;
+            font-family: Arial, sans-serif;
+            max-width: 1400px;
+            border-radius: 10px;
+            margin: 30px auto;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-container h1 {
+            font-size: 3rem;
+            margin-top: 15px;
+        }
+
+        .footer-container span {
+            font-size: 3.5rem;
+            color: rgb(118, 118, 252);
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .col {
+            flex-basis: calc(30% - 20px);
+            margin-bottom: 0px;
+        }
+
+        .col h3 {
+            color: rgb(44, 24, 7);
+            border-bottom: 2px solid black;
+            padding-bottom: 10px;
+            font-size: 30px;
+        }
+
+        .col p {
+            margin: 0;
+        }
+
+        .container hr {
+            margin: 10px 0;
+            border: 1px solid black;
+        }
+
+        .social-icons {
+            text-align: center;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            background-color: #555;
+            color: #fff;
+            padding: 10px;
+            border-radius: 50%;
+            margin: 0 5px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 18px;
+            transition: background-color 0.4s, transform 0.4s;
+        }
+
+        .social-icons a:hover {
+            background-color: rgb(118, 118, 252);
+            transform: rotate(360deg);
+        }
+
+        #footUseful a {
+            color: #222;
+            text-decoration: none;
+            font-size: 20px;
+            line-height: 1.6;
+        }
+
+        #footUseful a:hover {
+            color: rgb(118, 118, 252);
+        }
+
+        #footContact p {
+            color: #222;
+            font-size: 20px;
+            line-height: 1.8;
+        }
+
+        .footer-end {
+            padding: 20px;
+            background-color: darkcyan;
+            color: #fff;
+            text-align: center;
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+
+        footer ul li {
+            font-size: 20px;
+            color: #222;
+            line-height: 1.8;
+        }
+
+        footer ul {
+            list-style-type: none;
+            margin-left: 4px;
+        }
+
+        footer ul li i {
+            margin-right: 8px;
+        }
+
+        .slideshow {
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .image-grid {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            overflow: hidden;
+        }
+
+        .image-grid img {
+            width: 30%; /* Adjusted width for three images side by side */
+            height: 300px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <i class="fas fa-ring" style="font-size: 3rem;"></i> <!-- Changed to wedding ring icon -->
+        <h1>Welcome to Nithin  Events Wedding Anniversary Services</h1>
+    </div>
+    <div class="content">
+        <h2>Choose Nithin  Events</h2>
+        <p>Nithin  Events is your go-to partner for creating memorable and joyous wedding anniversary events. With our expertise and dedication, we ensure that your special day is celebrated in style, making it truly unforgettable.</p>
+        <p>Our team of experienced event planners and decorators are committed to ensuring every detail of your event is perfect. From venue selection to decoration, catering, and entertainment, we handle everything with utmost care and professionalism.</p>
+        <p>Whether you're celebrating your first anniversary or a milestone anniversary, Nithin  Events will work closely with you to bring your vision to life. We take pride in our creativity, attention to detail, and commitment to excellence.</p>
+        <p>Choose Nithin  Events for your wedding anniversary event and let us help you create unforgettable memories!</p>
+    </div>
+    <h2>Our Services</h2>
+    <div class="services">
+        <div class="service-item">
+            <i class="fas fa-map-marker-alt service-icon"></i>
+            <div class="service-details">
+                <h3>Venue Selection</h3>
+                <p>We help you choose the perfect venue for your celebration, ensuring it matches your theme and requirements.</p>
+            </div>
+        </div>
+        <div class="service-item">
+            <i class="fas fa-paint-brush service-icon"></i>
+            <div class="service-details">
+                <h3>Decoration</h3>      
+                <p>Our skilled decorators transform your venue into a stunning space, reflecting your style and personality.</p>
+            </div>
+        </div>
+        <div class="service-item">
+            <i class="fas fa-utensils service-icon"></i>
+            <div class="service-details">
+                <h3>Catering</h3>
+                <p>We offer a wide range of catering options, from gourmet meals to casual buffets, to satisfy your guests' tastes.</p>
+            </div>
+        </div>
+        <div class="service-item">
+            <i class="fas fa-music service-icon"></i>
+            <div class="service-details">
+                <h3>Entertainment</h3>
+                <p>From live bands to DJs and performers, we provide entertainment that keeps the party going all night.</p>
+            </div>
+        </div>
+    </div>
+    <div class="packages">
+        <h2>Our Packages</h2>
+        <div class="service-item">
+            <i class="fas fa-star service-icon"></i>
+            <div class="service-details">
+                <h3>Basic Package</h3>
+                <p>Includes venue selection, basic decoration, and catering services for up to 50 guests.</p>
+            </div>
+        </div>
+        <div class="service-item">
+            <i class="fas fa-gem service-icon"></i>
+            <div class="service-details">
+                <h3>Premium Package</h3>
+                <p>Includes all services from the Basic Package plus premium decoration, entertainment, and catering for up to 100 guests.</p>
+            </div>
+        </div>
+        <div class="service-item">
+            <i class="fas fa-crown service-icon"></i>
+            <div class="service-details">
+                <h3>Luxury Package</h3>
+                <p>Includes all services from the Premium Package plus a dedicated event manager, personalized theme, and catering for up to 200 guests.</p>
+            </div>
+        </div>
+    </div>
+    <div >
+        <div class="slideshow">
+            <!-- Images to be displayed -->
+            <div class="image-grid">
+                <img src="/wa/wa1.jpg" alt="Image 1">
+                <img src="/wa/wa2.jpg" alt="Image 2">
+                <img src="/wa/wa3.jpg" alt="Image 3">
+            </div>
+            <div class="image-grid">
+                <img src="/wa/wa4.jpg" alt="Image 4">
+                <img src="/wa/wa5.jpg" alt="Image 5">
+                <img src="/wa/wa6.jpg" alt="Image 6">
+            </div>
+            <div class="image-grid">
+                <img src="/wa/wa7.jpg" alt="Image 7">
+                <img src="/wa/wa8.jpg" alt="Image 8">
+                <img src="/wa/wa9.jpg" alt="Image 9">
+            </div>
+        </div>
+        
+    </div>
+<!-- Footer -->
+<footer>
+    <div class="footer-container">
+        <h1>Nithin<span>Events</span></h1>
+        <div class="row">
+            <div class="col">
+                <h3>Company</h3>
+                <hr />
+                <ul id="footCompany">
+                    <li><i class="fa fa-angle-right"></i>About Us</li>
+                    <li><i class="fa fa-angle-right"></i>Our Services</li>
+                    <li><i class="fa fa-angle-right"></i>Contact</li>
+                </ul>
+            </div>
+            <div class="col">
+                <h3>Useful Links</h3>
+                <hr />
+                <ul id="footUseful">
+                    <li><a href="#"><i class="fa fa-angle-right"></i>Terms & Conditions</a></li>
+                    <li><a href="#"><i class="fa fa-angle-right"></i>Privacy Policy</a></li>
+                    <li><a href="#"><i class="fa fa-angle-right"></i>FAQ</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <h3>Contact</h3>
+                <hr />
+                <ul id="footContact">
+                    <li><p><i class="fa fa-map-marker-alt"></i> 123 Event St, Celebrations City, USA</p></li>
+                    <li><p><i class="fa fa-phone"></i> (123) 456-7890</p></li>
+                    <li><p><i class="fa fa-envelope"></i> contact@nithinevents.com</p></li>
+                </ul>
+            </div>
+        </div>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </div>
+    <div class="footer-end">
+        &copy; 2024 Nithin  Events. All rights reserved.
+    </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!-- views/empuserlog.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee User Logs</title>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid #dddddd;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+  <h1>Employee User Logs</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Timestamp</th>
+        <th>Action</th>
+        <th>Performed By</th>
+        <th>Employee Affected</th>
+        <th>Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% empemplogs.forEach(log => { %>
+        <tr>
+          <td><%= log.timestamp %></td>
+          <td><%= log.action %></td>
+          <td><%= log.performedBy %></td>
+          <td><%= log.employeeAffected %></td>
+          <td>
+            <p><strong>Previous Data:</strong></p>
+            <p>First Name: <%= log.details.previousData.firstName %></p>
+            <p>Last Name: <%= log.details.previousData.lastName %></p>
+            <p>Email: <%= log.details.previousData.email %></p>
+            <p>Phone Number: <%= log.details.previousData.phoneNumber %></p>
+            <p>Role: <%= log.details.previousData.role %></p>
+            <p>Previous Workplace: <%= log.details.previousData.previousWorkPlace %></p>
+            <p>Experience: <%= log.details.previousData.experience %></p>
+            <p>Education: <%= log.details.previousData.education %></p>
+            <p>Skills: <%= log.details.previousData.skills %></p>
+            <p>Availability: <%= log.details.previousData.availability %></p>
+            <hr>
+            <p><strong>Updated Data:</strong></p>
+            <p>First Name: <%= log.details.updatedData.firstName %></p>
+            <p>Last Name: <%= log.details.updatedData.lastName %></p>
+            <p>Email: <%= log.details.updatedData.email %></p>
+            <p>Phone Number: <%= log.details.updatedData.phoneNumber %></p>
+            <p>Role: <%= log.details.updatedData.role %></p>
+            <p>Previous Workplace: <%= log.details.updatedData.previousWorkPlace %></p>
+            <p>Experience: <%= log.details.updatedData.experience %></p>
+            <p>Education: <%= log.details.updatedData.education %></p>
+            <p>Skills: <%= log.details.updatedData.skills %></p>
+            <p>Availability: <%= log.details.updatedData.availability %></p>
+          </td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+</body>
+</html>
